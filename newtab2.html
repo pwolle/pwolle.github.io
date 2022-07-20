@@ -29,9 +29,9 @@
             */
             background-color: #100B39;
             background-image: url('https://kurzgesagt.org/wp-content/uploads/2018/07/inanutshell-kurzgesagt-the-great-filter-06.png');
+            background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
+            background-size: cover;
             color: var(--text-color);
             max-width: 90%;
             width: 800px;
@@ -44,13 +44,14 @@
             font-size: 29pt;
             line-height: 3.0em;
             background-color: rgb(29, 36, 78);
-            opacity: 0.8;
+            opacity: 0.6;
             border-radius: 20px;
+            border: 2px solid rgba(255, 0, 0, 0);
         }
         
         h1:hover {
             opacity: 1;
-            border: solid;
+            border: 2px solid;
             border-radius: 20px;
             border-color: rgb(57, 140, 155);
         }
@@ -100,7 +101,6 @@
         }
         
         .logo {
-            /* height: 75pt; */
             margin: 0 auto;
             display: block;
             margin-left: auto;
