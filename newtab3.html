@@ -11,7 +11,7 @@
             --h5-color: rgb(125, 203, 196);
             --h6-color: rgb(66, 113, 174);
             --bold-color: rgb(81, 210, 157);
-            --background-color: rgb(176, 156, 41);
+            --background-color: #1D1135;
             --text-color: rgb(210, 216, 225);
         }
         
@@ -21,7 +21,7 @@
         }
         
         body {
-            background-color: #1D1135;
+            background-color: --background-color;
             background-image: url('https://www.ubackground.com/_ph/2/984587290.jpg');
             background-position: center;
             background-repeat: no-repeat;
@@ -37,15 +37,27 @@
             color: var(--h1-color);
             font-size: 29pt;
             line-height: 3.0em;
-            background-color: rgb(55, 0, 113);
+            background-color: #440071;
             opacity: 0.5;
             border-radius: 40px;
-            border: 2px solid rgb(55, 0, 113);
+            border: 2px solid #440071;
         }
         
         h1:hover {
             opacity: 0.95;
             border-color: #003eaa;
+        }
+        
+        input {
+            border-radius: 15px;
+            width: 70%;
+            text-align: center;
+            border-bottom: 10px solid transparent;
+            background-color: #d7d7db;
+        }
+        
+        img {
+            border-radius: 35%;
         }
         
         a,
@@ -57,7 +69,7 @@
         }
         
         .logodiv {
-            width: 150px;
+            width: 175px;
             display: inline-block;
             vertical-align: middle;
             margin-left: 20px;
@@ -73,6 +85,16 @@
 
 <body>
     <br>
+
+    <h1 style="color: var(--h1-color); opacity: 0.95;">
+        <div class="logodiv">
+            <img class="logo" height="90pt" src="https://www.startpage.com/sp/cdn/favicons/mstile-310x310--light.png" />
+        </div>
+        <input type="text" valxue="" id="myInput" placeholder="Startpage" autofocus="autofocus" onfocus="this.select()">
+
+    </h1>
+
+
 
     <h1 style="color: var(--h1-color);">
         <a href="https://ecampus.uni-goettingen.de/h1/pages/cs/sys/portal/hisinoneStartPage.faces?page=0">
@@ -102,15 +124,6 @@
         </a>
     </h1>
 
-    <h1 style="color: var(--h4-color);">
-        <a href="https://web.whatsapp.com/">
-            <div class="logodiv">
-                <img class="logo" height="100pt" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
-            </div>
-            whatsapp
-        </a>
-    </h1>
-
     <h1 style="color: var(--h5-color);">
         <a href="https://web.telegram.org/z/">
             <div class="logodiv">
@@ -128,6 +141,21 @@
             deepl
         </a>
     </h1>
+
+    <script>
+        var input = document.getElementById("myInput");
+
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                let link = "https://www.startpage.com/do/dsearch?query=" + input.value;
+
+
+                console.log(link);
+
+                window.location.href = link;
+            }
+        });
+    </script>
 
 
 </body>
