@@ -1,1 +1,0 @@
-# unitdeterminant.github.io
